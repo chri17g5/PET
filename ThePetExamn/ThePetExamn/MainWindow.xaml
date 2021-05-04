@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ThePetExamn"
         xmlns:view="clr-namespace:ThePetExamn.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="850">
     <Grid>
         <TabControl>
             <TabItem Header="Agents">
@@ -15,10 +15,9 @@
             <TabItem Header="Informants">
                 <view:AgentsControl  x:Name="tabInformants"/>
             </TabItem>
-            <TabItem Header="Gangs">
+            <TabItem Header="BandeNavn">
                 <view:AgentsControl  x:Name="tabGangs"/>
             </TabItem>
         </TabControl>
-        
     </Grid>
 </Window>

@@ -5,8 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ThePetExamn.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="350" d:DesignWidth="700">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <DataGrid>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="BandeNavn" Binding="{Binding GangName}"/>
+                <DataGridTextColumn Header="Trusselniveau" Binding="{Binding ThreatLevel}"/>
+                <DataGridTextColumn Header="KendtBoliger" Binding="{Binding KnowLocation}"/>
+                <DataGridTextColumn Header="HarActivEfterforskning" Binding="{Binding HasActiveCase}"/>
+                <!-- ADD VIEW DETAILS BTN TO LOOK AT FURTHER INFORMATION AS MEMBERS OF GANG AND LOGO IMAGE  -->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="CreateBTN" Content="Tilføj Bande" Grid.Row="2" HorizontalAlignment="Left" Margin="5,0,0,0"/>
     </Grid>
 </UserControl>
