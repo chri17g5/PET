@@ -164,6 +164,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="UnitTesting\" />
     <Folder Include="View\MoreInfoView\" />
     <Folder Include="View\UpdateView\" />
   </ItemGroup>

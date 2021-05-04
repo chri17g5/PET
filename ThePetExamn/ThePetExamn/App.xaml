@@ -4,12 +4,7 @@
              xmlns:local="clr-namespace:ThePetExamn"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!-- STYLING IS PRIMARELY MADE HERE NOT SO CODE DON'T REPEAT -->
-        <!-- GRID STYLING -->
-        <Style TargetType="Grid">
-            <Setter Property="Background" Value="White"/>
-        </Style>
-        
+        <!-- STYLING IS PRIMARELY MADE HERE NOT SO CODE DON'T REPEAT -->        
         <!-- BUTTON STYLE -->
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="DarkGray"/>
