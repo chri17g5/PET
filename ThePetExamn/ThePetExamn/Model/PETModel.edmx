@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PETexamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateOfEmployment" Type="date" Nullable="false" />
+          <Property Name="Salery" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gangs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GangName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LogoOrSymbol" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ThreatLevel" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KnownLocations" Type="nvarchar(max)" />
+          <Property Name="HasActiveCases" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Informants">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GangID" Type="int" />
+          <Property Name="AgentID" Type="int" />
+          <Property Name="Deployment" Type="datetime" Nullable="false" />
+          <Property Name="EndOfDeployment" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Nationality" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PersonalAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="HeadShot" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="AgentID" Type="int" />
+          <Property Name="GangsID" Type="int" />
+        </EntityType>
+        <Association Name="FK__Informant__Agent__5165187F">
+          <End Role="Agents" Type="Self.Agents" Multiplicity="0..1" />
+          <End Role="Informants" Type="Self.Informants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Informants">
+              <PropertyRef Name="AgentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Informant__GangI__5070F446">
+          <End Role="Gangs" Type="Self.Gangs" Multiplicity="0..1" />
+          <End Role="Informants" Type="Self.Informants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gangs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Informants">
+              <PropertyRef Name="GangID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Persons__AgentID__4CA06362">
+          <End Role="Agents" Type="Self.Agents" Multiplicity="0..1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Persons">
+              <PropertyRef Name="AgentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Persons__GangsID__4D94879B">
+          <End Role="Gangs" Type="Self.Gangs" Multiplicity="0..1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gangs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Persons">
+              <PropertyRef Name="GangsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PETexamModelStoreContainer">
+          <EntitySet Name="Agents" EntityType="Self.Agents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gangs" EntityType="Self.Gangs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Informants" EntityType="Self.Informants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Informant__Agent__5165187F" Association="Self.FK__Informant__Agent__5165187F">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Informants" EntitySet="Informants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Informant__GangI__5070F446" Association="Self.FK__Informant__GangI__5070F446">
+            <End Role="Gangs" EntitySet="Gangs" />
+            <End Role="Informants" EntitySet="Informants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Persons__AgentID__4CA06362" Association="Self.FK__Persons__AgentID__4CA06362">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Persons" EntitySet="Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Persons__GangsID__4D94879B" Association="Self.FK__Persons__GangsID__4D94879B">
+            <End Role="Gangs" EntitySet="Gangs" />
+            <End Role="Persons" EntitySet="Persons" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PETexamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfEmployment" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Salery" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Informants" Relationship="Self.FK__Informant__Agent__5165187F" FromRole="Agents" ToRole="Informants" />
+          <NavigationProperty Name="Persons" Relationship="Self.FK__Persons__AgentID__4CA06362" FromRole="Agents" ToRole="Persons" />
+        </EntityType>
+        <EntityType Name="Gangs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GangName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LogoOrSymbol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ThreatLevel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KnownLocations" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HasActiveCases" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Informants" Relationship="Self.FK__Informant__GangI__5070F446" FromRole="Gangs" ToRole="Informants" />
+          <NavigationProperty Name="Persons" Relationship="Self.FK__Persons__GangsID__4D94879B" FromRole="Gangs" ToRole="Persons" />
+        </EntityType>
+        <EntityType Name="Informants">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GangID" Type="Int32" />
+          <Property Name="AgentID" Type="Int32" />
+          <Property Name="Deployment" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndOfDeployment" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Agents" Relationship="Self.FK__Informant__Agent__5165187F" FromRole="Informants" ToRole="Agents" />
+          <NavigationProperty Name="Gangs" Relationship="Self.FK__Informant__GangI__5070F446" FromRole="Informants" ToRole="Gangs" />
+        </EntityType>
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Nationality" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonalAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HeadShot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AgentID" Type="Int32" />
+          <Property Name="GangsID" Type="Int32" />
+          <NavigationProperty Name="Agents" Relationship="Self.FK__Persons__AgentID__4CA06362" FromRole="Persons" ToRole="Agents" />
+          <NavigationProperty Name="Gangs" Relationship="Self.FK__Persons__GangsID__4D94879B" FromRole="Persons" ToRole="Gangs" />
+        </EntityType>
+        <Association Name="FK__Informant__Agent__5165187F">
+          <End Role="Agents" Type="Self.Agents" Multiplicity="0..1" />
+          <End Role="Informants" Type="Self.Informants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Informants">
+              <PropertyRef Name="AgentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Persons__AgentID__4CA06362">
+          <End Role="Agents" Type="Self.Agents" Multiplicity="0..1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Persons">
+              <PropertyRef Name="AgentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Informant__GangI__5070F446">
+          <End Role="Gangs" Type="Self.Gangs" Multiplicity="0..1" />
+          <End Role="Informants" Type="Self.Informants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gangs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Informants">
+              <PropertyRef Name="GangID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Persons__GangsID__4D94879B">
+          <End Role="Gangs" Type="Self.Gangs" Multiplicity="0..1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gangs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Persons">
+              <PropertyRef Name="GangsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PETexamEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agents" EntityType="Self.Agents" />
+          <EntitySet Name="Gangs" EntityType="Self.Gangs" />
+          <EntitySet Name="Informants" EntityType="Self.Informants" />
+          <EntitySet Name="Persons" EntityType="Self.Persons" />
+          <AssociationSet Name="FK__Informant__Agent__5165187F" Association="Self.FK__Informant__Agent__5165187F">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Informants" EntitySet="Informants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Persons__AgentID__4CA06362" Association="Self.FK__Persons__AgentID__4CA06362">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Persons" EntitySet="Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Informant__GangI__5070F446" Association="Self.FK__Informant__GangI__5070F446">
+            <End Role="Gangs" EntitySet="Gangs" />
+            <End Role="Informants" EntitySet="Informants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Persons__GangsID__4D94879B" Association="Self.FK__Persons__GangsID__4D94879B">
+            <End Role="Gangs" EntitySet="Gangs" />
+            <End Role="Persons" EntitySet="Persons" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PETexamModelStoreContainer" CdmEntityContainer="PETexamEntities">
+          <EntitySetMapping Name="Agents">
+            <EntityTypeMapping TypeName="PETexamModel.Agents">
+              <MappingFragment StoreEntitySet="Agents">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="DateOfEmployment" ColumnName="DateOfEmployment" />
+                <ScalarProperty Name="Salery" ColumnName="Salery" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gangs">
+            <EntityTypeMapping TypeName="PETexamModel.Gangs">
+              <MappingFragment StoreEntitySet="Gangs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GangName" ColumnName="GangName" />
+                <ScalarProperty Name="LogoOrSymbol" ColumnName="LogoOrSymbol" />
+                <ScalarProperty Name="ThreatLevel" ColumnName="ThreatLevel" />
+                <ScalarProperty Name="KnownLocations" ColumnName="KnownLocations" />
+                <ScalarProperty Name="HasActiveCases" ColumnName="HasActiveCases" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Informants">
+            <EntityTypeMapping TypeName="PETexamModel.Informants">
+              <MappingFragment StoreEntitySet="Informants">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GangID" ColumnName="GangID" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="Deployment" ColumnName="Deployment" />
+                <ScalarProperty Name="EndOfDeployment" ColumnName="EndOfDeployment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="PETexamModel.Persons">
+              <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="PersonalAddress" ColumnName="PersonalAddress" />
+                <ScalarProperty Name="HeadShot" ColumnName="HeadShot" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="GangsID" ColumnName="GangsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

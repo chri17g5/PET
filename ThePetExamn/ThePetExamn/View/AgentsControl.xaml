@@ -18,6 +18,7 @@
                 <DataGridTextColumn Header="Afdeling" Binding="{Binding Department}"/>
                 <DataGridTextColumn Header="Ansættelses Dato" Binding="{Binding DateOfEmployment}"/>
                 <DataGridTextColumn Header="Løn" Binding="{Binding Salary}"/>
+                <!-- ADD VIEW DETAILS BTN TO LOOK AT FURTHER INFORMATION AS MEMBERS OF GANG AND LOGO IMAGE  -->
             </DataGrid.Columns>  
         </DataGrid>
         <Button x:Name="CreateBTN" Content="Tilføj Agent" Grid.Row="2" HorizontalAlignment="Left" Margin="5,0,0,0"/>

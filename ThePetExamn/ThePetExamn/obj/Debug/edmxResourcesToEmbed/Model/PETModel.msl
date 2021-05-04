@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PETexamModelStoreContainer" CdmEntityContainer="PETexamEntities">
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="PETexamModel.Agents">
+        <MappingFragment StoreEntitySet="Agents">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="DateOfEmployment" ColumnName="DateOfEmployment" />
+          <ScalarProperty Name="Salery" ColumnName="Salery" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gangs">
+      <EntityTypeMapping TypeName="PETexamModel.Gangs">
+        <MappingFragment StoreEntitySet="Gangs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GangName" ColumnName="GangName" />
+          <ScalarProperty Name="LogoOrSymbol" ColumnName="LogoOrSymbol" />
+          <ScalarProperty Name="ThreatLevel" ColumnName="ThreatLevel" />
+          <ScalarProperty Name="KnownLocations" ColumnName="KnownLocations" />
+          <ScalarProperty Name="HasActiveCases" ColumnName="HasActiveCases" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Informants">
+      <EntityTypeMapping TypeName="PETexamModel.Informants">
+        <MappingFragment StoreEntitySet="Informants">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GangID" ColumnName="GangID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="Deployment" ColumnName="Deployment" />
+          <ScalarProperty Name="EndOfDeployment" ColumnName="EndOfDeployment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persons">
+      <EntityTypeMapping TypeName="PETexamModel.Persons">
+        <MappingFragment StoreEntitySet="Persons">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="PersonalAddress" ColumnName="PersonalAddress" />
+          <ScalarProperty Name="HeadShot" ColumnName="HeadShot" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="GangsID" ColumnName="GangsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

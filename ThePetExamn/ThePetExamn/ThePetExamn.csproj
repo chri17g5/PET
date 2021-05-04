@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,9 +64,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Agents.cs">
+      <DependentUpon>PETModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Gangs.cs">
+      <DependentUpon>PETModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Informants.cs">
+      <DependentUpon>PETModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Persons.cs">
+      <DependentUpon>PETModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PETModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PETModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PETModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PETModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PETModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PETModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AgentsViewModel.cs" />
     <Compile Include="ViewModel\GangsVeiwModel.cs" />
     <Compile Include="ViewModel\InformantsVeiwModel.cs" />
+    <Compile Include="ViewModel\PeopleViewModel.cs" />
     <Compile Include="View\AgentsControl.xaml.cs">
       <DependentUpon>AgentsControl.xaml</DependentUpon>
     </Compile>
@@ -110,6 +147,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\PETModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PETModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\PETModel.edmx.diagram">
+      <DependentUpon>PETModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,7 +164,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="View\MoreInfoView\" />
+    <Folder Include="View\UpdateView\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\PETModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PETModel.Context.cs</LastGenOutput>
+      <DependentUpon>PETModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\PETModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PETModel.edmx</DependentUpon>
+      <LastGenOutput>PETModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
