@@ -65,8 +65,8 @@ namespace ThePetExamn.View
                 Persons persons = e.Row.DataContext as Persons;
 
                 var matchedData = (from per in pet.Set<Persons>()
-                                   where per.ID = persons.ID //Find out where this supposed "bool" is
-                                   select per).SinleOrDefault();
+                                   where per.ID == persons.ID
+                                   select per).SingleOrDefault();
                 //If user eddits a null table it becomes new data for the table!
                 if (matchedData == null)
                 {
