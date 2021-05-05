@@ -67,9 +67,15 @@ namespace ThePetExamn.View
                 var matchedData = (from per in pet.Set<Persons>()
                                    where per.ID == persons.ID
                                    select per).SingleOrDefault();
+
                 //If user eddits a null table it becomes new data for the table!
                 if (matchedData == null)
                 {
+                    //Error Hypothesis
+                    //Error may occur because of the syntax (most likely due to error code)
+                    //  Is it DateOfBirth? Date & Date time is not the same thing. (MOST LIKELY)
+                    //  DateOfBirth displays MM/dd/yyyy HH:mm:ss which is not how it works in SQL with Date(MM/dd/yyyy)
+
                     Table<Persons> perTable = pet.Set<Persons>();
                     Persons _persons = new Persons();
                     _persons.FirstName = persons.FirstName;
@@ -100,6 +106,8 @@ namespace ThePetExamn.View
                     matchedData.Remarks = persons.Remarks;
                     matchedData.GangsID = persons.GangsID;
                     matchedData.AgentID = persons.AgentID;
+
+                    pet.SaveChanges();
 
                     StatusText.Text = "Success: Data Updated";
                 }
