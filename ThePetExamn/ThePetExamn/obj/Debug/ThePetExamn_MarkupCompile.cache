@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\App.xaml
-41683216927
+5987172248
 2794908532
-19-575061128
+20-1400747694
 18-766183029
-MainWindow.xaml;View\AgentsControl.xaml;View\GangsControl.xaml;View\InformantControl.xaml;
+MainWindow.xaml;View\AgentsControl.xaml;View\CreationView\CreateAgent.xaml;View\GangsControl.xaml;View\InformantControl.xaml;
 
 False
 

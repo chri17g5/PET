@@ -20,7 +20,7 @@ namespace ThePetExamn.ViewModel
         private string _firstName;
         private string _lastName;
         private int _age;
-        private DateTime _dateOfBirth;
+       // private DateTime _dateOfBirth;
         private string _nationality;
         private string _personalAddress;
         private string _headShot; //Picture path string
@@ -64,17 +64,16 @@ namespace ThePetExamn.ViewModel
                 NotifyOfPropertyChange("Age");
             }
         }
-        public DateTime DateOfBirth
-        {
-            get { return _dateOfBirth; }
-            set
-            {
-                //this doesn't work due to that fact it is already a datetime the toturials i have seen all use string for datetime (for somereason)
+        //public DateTime DateOfBirth
+        //{
+           // get { return _dateOfBirth; }
+            //set
+            //{
       //          _dateOfBirth = Convert.ToDateTime(value).ToString("MM/dd/yyyy");
       //          NotifyOfPropertyChange("DateOfBirth");
 
-            }
-        }
+            //}
+        //}
         public string Nationality
         {
             get { return _nationality; }

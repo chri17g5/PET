@@ -27,3 +27,5 @@ C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\bin\Debug\EntityFr
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\bin\Debug\EntityFramework.xml
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetExamn.csproj.CopyComplete
+C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\View\CreationView\CreateAgent.g.cs
+C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\View\CreationView\CreateAgent.baml

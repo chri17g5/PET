@@ -21,6 +21,6 @@
                 <!-- ADD VIEW DETAILS BTN TO LOOK AT FURTHER INFORMATION AS MEMBERS OF GANG AND LOGO IMAGE  -->
             </DataGrid.Columns>  
         </DataGrid>
-        <Button x:Name="CreateBTN" Content="Tilføj Agent" Grid.Row="2" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+        <Button x:Name="CreateBTN" Content="Tilføj Agent" Grid.Row="2" HorizontalAlignment="Left" Margin="5,0,0,0" Click="CreateBTN_Click"/>
     </Grid>
 </UserControl>

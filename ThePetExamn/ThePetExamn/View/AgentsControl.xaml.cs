@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ThePetExamn.View.CreationView;
+using ThePetExamn.ViewModel;
 
 namespace ThePetExamn.View
 {
@@ -23,6 +25,13 @@ namespace ThePetExamn.View
         public AgentsControl()
         {
             InitializeComponent();
+            this.DataContext = AgentsViewModel();
+        }
+
+        private void CreateBTN_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAgent createAgent = new CreateAgent();
+            createAgent.Show();
         }
     }
 }

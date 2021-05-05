@@ -1,0 +1,3 @@
+The designs displayed here are not apart of the project.
+But to display how I belive the data base should look instead of how it turned out.
+I realized the ER was badly designed and whish to display my capeabilities to design a DB

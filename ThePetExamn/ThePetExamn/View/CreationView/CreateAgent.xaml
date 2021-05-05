@@ -5,13 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThePetExamn.View.CreationView"
         mc:Ignorable="d"
-        Title="CreateAgent" Height="400" Width="300">
+        Title="CreateAgent" Height="400" Width="300" ResizeMode="NoResize">
     <Grid>
         <StackPanel>
             <Label Content="Tilføj Agent" FontSize="25" FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Navn:" Margin="5,0,5,0"/>
-                <TextBox x:Name="FirstName" Width="200" BorderBrush="Black" BorderThickness="2"/>
+                <TextBlock Text="Fornavn:" Margin="5,0,5,0" Width="75"/>
+                <TextBox x:Name="FirstName" Width="200" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Right" PreviewTextInput="LettersOnly"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="Efternvan:" Margin="5,0,5,0" Width="75"/>
+                <TextBox x:Name="LastName" Width="200" BorderBrush="Black" BorderThickness="2" PreviewTextInput="LettersOnly"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="Fødselsdag:" Margin="5,0,5,0" Width="75"/>
+                <DatePicker Width="200" BorderBrush="Black" BorderThickness="2"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="TelefonInfo:" Margin="5,0,5,0" Width="75"/>
+                <TextBox x:Name="Telephone" Width="200" BorderBrush="Black" BorderThickness="2" PreviewTextInput="NumsOnly"/>
             </StackPanel>
         </StackPanel>
     </Grid>

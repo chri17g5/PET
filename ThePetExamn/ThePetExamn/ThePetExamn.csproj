@@ -98,6 +98,9 @@
     <Compile Include="View\AgentsControl.xaml.cs">
       <DependentUpon>AgentsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CreationView\CreateAgent.xaml.cs">
+      <DependentUpon>CreateAgent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GangsControl.xaml.cs">
       <DependentUpon>GangsControl.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AgentsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreationView\CreateAgent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
