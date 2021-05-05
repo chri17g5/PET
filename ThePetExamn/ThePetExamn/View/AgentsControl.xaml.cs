@@ -25,7 +25,6 @@ namespace ThePetExamn.View
         public AgentsControl()
         {
             InitializeComponent();
-            this.DataContext = AgentsViewModel();
         }
 
         private void CreateBTN_Click(object sender, RoutedEventArgs e)

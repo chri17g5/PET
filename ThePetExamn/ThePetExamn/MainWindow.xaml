@@ -18,6 +18,9 @@
             <TabItem Header="BandeNavn">
                 <view:AgentsControl  x:Name="tabGangs"/>
             </TabItem>
+            <TabItem Header="Folk">
+                <view:PeopleControl x:Name="tabPeople"/>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

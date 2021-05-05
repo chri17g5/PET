@@ -1,1 +1,1 @@
-FK is commentet out in the Querry because i incountered errors, it has been added VIA the dbo interface
+FK is commentet out in the Querry because i incountered errors, it has been added via the dbo design interface

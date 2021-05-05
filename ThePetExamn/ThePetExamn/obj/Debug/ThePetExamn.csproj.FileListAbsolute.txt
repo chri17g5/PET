@@ -20,7 +20,6 @@ C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetEx
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetExamn.csproj.CoreCompileInputs.cache
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetExamn.exe
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetExamn.pdb
-C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetExamn.csprojAssemblyReference.cache
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetExamn_Content.g.cs
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\bin\Debug\EntityFramework.dll
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\bin\Debug\EntityFramework.SqlServer.dll
@@ -29,3 +28,5 @@ C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\bin\Debug\EntityFr
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\ThePetExamn.csproj.CopyComplete
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\View\CreationView\CreateAgent.g.cs
 C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\View\CreationView\CreateAgent.baml
+C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\View\PeopleControl.g.cs
+C:\Users\chri17g5\Desktop\ExamnS3\PET\ThePetExamn\ThePetExamn\obj\Debug\View\PeopleControl.baml

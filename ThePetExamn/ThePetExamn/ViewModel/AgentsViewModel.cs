@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThePetExamn.ViewModel
 {
-    class AgentsINPC
+    class AgentsViewModel
     {
 
     }
